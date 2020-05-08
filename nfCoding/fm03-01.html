@@ -20,13 +20,96 @@
 <div id="l-document">
 <header class="header" id="header"></header>
 <div id="container">
-	<main id="main" role="main">
-		<article class="article">
-			
-		</article>
-		<aside class="sub" id="sub"></aside>
-	</main><!-- /#main -->
+	<div class="wrp-container">
+		<div class="box-step">
+			<ul class="lst-step">
+				<li class="checked">テキストテキスト</li>
+				<li class="checked">テキスト</li>
+				<li>テキスト</li>
+				<li>テキスト</li>
+			</ul>
+		</div>
+		<h2 class="hdg-lv2">テキストテキスト</h2>
+		<form action="/">
+			<div class="wrp-grid">
+				<div class="grid-3"><p class="txt-require"><span>必須</span>テキストテキスト</p></div>
+				<div class="grid-6">
+					<div class="box-select">
+						<span class="box-select__value">テキスト</span>
+						<select name="form_01" title="">
+							<option value="1">テキストテキスト</option>
+							<option value="2">テキスト</option>
+							<option value="3">テキストテキストテキスト</option>
+						</select>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
 </div><!-- /#conainer -->
+<style>
+	.wrp-container {
+		max-width: 1000px;
+		margin: 0 auto;
+		padding: 0 20px;
+	}
+	.lst-step {
+		display: flex;
+	}
+	.lst-step li {
+		position: relative;
+		width: 100%;
+		text-align: center;
+		font-size: 16px;
+		padding: 14px 0;
+		background-color: #ddd;
+	}
+	.lst-step li.checked {
+		color: #fff;
+		background-color: #7cb342;
+	}
+	.lst-step li::before {
+		content: '';
+		width: 0;
+		height: 0;
+		border-style: solid;
+		border-width: 26px 0 26px 25px;
+		border-color: transparent transparent transparent #ddd;
+		position: absolute;
+		top: 0;
+		right: -25px;
+		z-index: 2;
+	}
+	.lst-step li.checked::before {
+		content: '';
+		width: 0;
+		height: 0;
+		border-style: solid;
+		border-width: 26px 0 26px 26px;
+		border-color: transparent transparent transparent #7cb342;
+		position: absolute;
+		top: 0;
+		right: -26px;
+		z-index: 2;
+	}
+	.lst-step li::after {
+		content: '';
+		width: 0;
+		height: 0;
+		border-style: solid;
+		border-width: 27px 0 27px 27px;
+		border-color: transparent transparent transparent #fff;
+		position: absolute;
+		top: -1px;
+		right: -27px;
+		z-index: 1;
+	}
+	.lst-step li:last-child:after,
+	.lst-step li:last-child:before {
+		display: none;
+	}
+	/*  */
+</style>
 <footer class="footer" id="footer"></footer>
 </div><!-- /#document -->
 </body>
