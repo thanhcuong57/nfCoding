@@ -109,10 +109,9 @@ smoothScroll({
 	speed		 : 1000,						 // アニメーション時間(ミリ秒)
 	pageTopID : '#document',			// ページトップIDへのスクロール時はURLハッシュを変更しない
 });
-// $('.box-select').click(function(){
-// 	console.log('true')
-// 	$(this).toggleClass('active-select');
-// });
+$('.js-accordion-trigger').click(function(){
+	$(this).find('.js-accordion-content').toggle();
+});
 
 });//End -> ready method
 

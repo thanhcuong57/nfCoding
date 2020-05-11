@@ -785,6 +785,7 @@ col 12:    100%
 	box-sizing: border-box;
 	color: #fff;
 	border-bottom: 1px solid #fff;
+	cursor: pointer;
 }
 .box-donation__title__inner span{
 	margin-right: 10px;
