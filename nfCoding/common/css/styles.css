@@ -896,8 +896,6 @@ col 12:    100%
 .lbl-require_lab{
 	display: table-cell;
 	padding-right: 8px;
-}
-.lbl-require_lab span{
 	width: 40px;
 	font-size: 12px;
 	display: block;
