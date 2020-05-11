@@ -112,6 +112,14 @@ smoothScroll({
 $('.js-accordion-trigger').click(function(){
 	$(this).find('.js-accordion-content').toggle();
 });
+$('.box-registration__btn').hover(function(){
+	var valueText = $(this).find('a').text();
+	if(valueText == '富山県富山県県山県県') {
+		$(this).find('a').text('富山県富山県');
+	}else {
+		$(this).find('a').text('富山県富山県県山県県');
+	}
+});
 
 });//End -> ready method
 

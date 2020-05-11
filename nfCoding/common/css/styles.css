@@ -791,7 +791,7 @@ col 12:    100%
 	position: absolute;
 	left:0;
 	bottom: 0;
-	width: 65%;
+	width: 85%;
 	height: 90px;
 }
 @media only screen and (max-width: 767px){
@@ -863,7 +863,7 @@ col 12:    100%
 	color: #000;
 	display: none;
 	margin: 15px -15px -15px;
-	background: #6a916b;
+	background: #203521;
 }
 .box-donation__content p{
 	padding: 10px 15px;
@@ -1034,6 +1034,7 @@ col 12:    100%
 	background-color: #fff;
 	border-radius: inherit;
 	border-radius: 5px;
+	cursor: pointer;
 }
 .box-frm__select select:hover{
 	border: 1px solid #007e01;
@@ -1129,7 +1130,7 @@ select::-ms-expand {
 }
 .box-registration__btn a{
 	display: inline-block;
-	min-width: 240px;
+	width: 240px;
 	padding: 12px 10px;
 	box-sizing: border-box;
 	border-radius: 6px;
@@ -1143,6 +1144,7 @@ select::-ms-expand {
 }
 .box-registration__btn a:hover{
 	background: #007e01;
+	width: 300px;
 }
 .box-registration__link a{
 	color: #228f22;
