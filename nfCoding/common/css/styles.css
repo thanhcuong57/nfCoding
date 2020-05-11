@@ -350,13 +350,13 @@ button{
 
 .hdg-lv1{
 	font-size: 28px;
-	line-height: 1.75;
+	line-height: 1.2;
 	color: #0f7e00;
 	letter-spacing: 0.01em;
 	font-weight: bold;
 	position: relative;
 	z-index: 1;
-	margin-top: -9%;
+	margin-top: -6%;
 }
 .hdg-lv2{
 	font-weight: bold;
@@ -371,6 +371,7 @@ button{
 @media only screen and (max-width: 767px){
 	.hdg-lv1{
 		font-size: 20px;
+		margin-top: -6%;
 	}
 	.hdg-lv2{
 		font-size: 18px;
@@ -780,12 +781,12 @@ col 12:    100%
 	left:0;
 	bottom: 0;
 	width: 85%;
-	height: 140px;
+	height: 100px;
 }
 @media only screen and (max-width: 767px){
 	.main-visual::before{
 		width: 97%;
-		height: 100px;
+		height: 70px;
 	}
 }
 .box-donation{
@@ -1133,6 +1134,7 @@ select::-ms-expand {
 	margin-top: 30px;
 }
 .lst-step {
+	margin-top: 50px;
 	display: flex;
 }
 .lst-step li {
@@ -1188,7 +1190,7 @@ select::-ms-expand {
 .lst-step li:last-child:before {
 	display: none;
 }
-.lst-step li:nth-child(1) {
+/* .lst-step li:nth-child(1) {
 	width: 34%;
 }
 .lst-step li:nth-child(2) {
@@ -1199,8 +1201,11 @@ select::-ms-expand {
 }
 .lst-step li:nth-child(4) {
 	width: 18%;
-}
+} */
 @media screen and (max-width: 767px) {
+	.lst-step {
+		margin-top: 30px;
+	}
 	.lst-step li {
 		font-size: 14px;
 		padding: 10px 0 11px;
