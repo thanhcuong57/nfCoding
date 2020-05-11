@@ -885,6 +885,9 @@ col 12:    100%
 	margin-top: 30px;
 	font-size: 12px;
 }
+.box-frm {
+	margin-top: 50px;
+}
 .box-frm dl{
 	width: 100%;
 	display: block;
@@ -1025,7 +1028,7 @@ select::-ms-expand {
 }
 .box-frm__input input{
 	width: 300px;
-	padding: 19px 5px;
+	padding: 20px 10px;
 	box-sizing: border-box;
 	border: 1px solid #ccc;
 	border-radius: 5px;
@@ -1086,6 +1089,9 @@ select::-ms-expand {
 	color: #228f22;
 }
 @media only screen and (max-width: 767px){
+	.box-frm {
+		margin-top: 30px;
+	}
 	.box-frm dt{
 		display: block;
 		width: 100%;
