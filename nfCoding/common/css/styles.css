@@ -785,6 +785,7 @@ col 12:    100%
 @media only screen and (max-width: 767px){
 	.main-visual::before{
 		width: 97%;
+		height: 100px;
 	}
 }
 .box-donation{
