@@ -1119,7 +1119,8 @@ select::-ms-expand {
 	color: #a79d9d;
 	font-size: 11px;
 	margin-left: 15px;
-	width: 100%;
+	right: -175px;
+	width: 160px;
 	top: 32%;
 }
 .box-frm__input__txt{
@@ -1216,7 +1217,7 @@ select::-ms-expand {
 		display: block;
 	}
 	.box-frm__input input{
-		width: calc(100% - 20px);
+		width: calc(100% - 21px);
 	}
 	.box-frm.box-frm--special .box-frm__input input{
 		width: 100%;
@@ -1224,6 +1225,7 @@ select::-ms-expand {
 	.box-frm__input__caption{
 		top: -26px;
 		margin-left: 0;
+		right: 0;
 		text-align: right;
 		display: block;
 	}
