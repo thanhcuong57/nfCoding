@@ -397,7 +397,7 @@ button{
 /*2-1-7.  Button   [btn-***]*/
 .btn{
 	display: inline-block;
-	width: 240px;
+	min-width: 240px;
 	padding: 12px 10px;
 	box-sizing: border-box;
 	border-radius: 6px;
@@ -413,7 +413,22 @@ button{
 	background: #007e01;
 	text-decoration: none;
 	opacity: 0.7;
-	width: 300px;
+	min-width: 300px;
+}
+.btn-disables .btn{
+	background: #f3f3f3;
+	color: #393939;
+}
+.btn-disables .btn:hover{
+	min-width: auto;
+}
+.btn-disables .fa-exclamation-triangle{
+	margin-right: 5px;
+}
+@media screen and (max-width: 767px){
+	.btn{
+		min-width: 100%;
+	}
 }
 /*2-1-8.  Anchor   [acr-***]*/
 .lst-link{
@@ -716,18 +731,18 @@ col 12:    100%
 /* 2-2-6. Visibility [visible-***] */
 @media only screen and (max-width : 767px){
 	.visible-sp{
-		display: block;
+		display: block !important;
 	}
 	.visible-pc{
-		display: none;
+		display: none !important;
 	}
 }
 @media only screen and (min-width : 768px){
 	.visible-sp{
-		display: none;
+		display: none !important;
 	}
 	.visible-pc{
-		display: block;
+		display: block !important;
 	}
 }
 
@@ -886,7 +901,6 @@ col 12:    100%
 }
 .box-donation__content{
 	color: #000;
-	display: none;
 	margin: 15px -15px -15px;
 	background: #fff;
 	padding: 15px 15px;
@@ -1190,6 +1204,16 @@ select::-ms-expand {
 	opacity: 0.7;
 	text-decoration: none;
 }
+.box-registration .btn-disables{
+	display: table-cell;
+	width: 50%;
+	text-align: right;
+}
+.captcha-image{
+	margin-top: 40px;
+	text-align: center;
+	cursor: pointer;
+}
 @media only screen and (max-width: 767px){
 	.box-frm {
 		margin-top: 30px;
@@ -1231,6 +1255,20 @@ select::-ms-expand {
 	}
 	.box-registration__btn a{
 		min-width: 190px;
+	}
+	.box-registration .btn-disables{
+		display: block;
+		width: 100%;
+	}
+	.box-registration--02 .box-registration__link{
+		display: block;
+		text-align: center;
+		margin-top: 25px;
+		width: 100%;
+	}
+	.captcha-image{
+		text-align: center;
+		margin-top: 30px;
 	}
 }
 .box-about{

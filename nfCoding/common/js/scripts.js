@@ -109,9 +109,6 @@ smoothScroll({
 	speed		 : 1000,						 // アニメーション時間(ミリ秒)
 	pageTopID : '#document',			// ページトップIDへのスクロール時はURLハッシュを変更しない
 });
-$('.js-accordion-trigger').click(function(){
-	$(this).find('.js-accordion-content').toggle();
-});
 $('.going').hover(function(){
 	var valueText = $(this).find('a').text();
 	if(valueText == '富山県富山県県山県県') {
