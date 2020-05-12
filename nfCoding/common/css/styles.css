@@ -1070,11 +1070,13 @@ col 12:    100%
 	width: 360px;
 	padding: 6px 10px;
 	background-color: #fff;
+	border: 1px solid #ddd;
 	border-radius: inherit;
 	border-radius: 5px;
 	cursor: pointer;
 }
-.box-frm__select select:hover{
+.box-frm__select select:hover,
+.box-frm__select select:focus{
 	border: 1px solid #007e01;
 }
 .box-frm__select{
@@ -1103,16 +1105,13 @@ select::-ms-expand {
 	position: relative;
 }
 .box-frm__input input{
-	width: 360px;
-	padding: 20px 10px;
-	box-sizing: border-box;
+	width: 340px;
+	padding: 7px 10px;
 	border: 1px solid #ccc;
 	border-radius: 5px;
 }
-.box-frm__input .border-green{
-	border: 1px solid #007e01;
-}
-.box-frm__input input:hover{
+.box-frm__input input:hover,
+.box-frm__input input:focus{
 	border: 1px solid #007e01;
 }
 .box-frm__input__caption{
@@ -1217,7 +1216,7 @@ select::-ms-expand {
 		display: block;
 	}
 	.box-frm__input input{
-		width: 100%;
+		width: calc(100% - 20px);
 	}
 	.box-frm.box-frm--special .box-frm__input input{
 		width: 100%;
