@@ -112,7 +112,7 @@ smoothScroll({
 $('.js-accordion-trigger').click(function(){
 	$(this).find('.js-accordion-content').toggle();
 });
-$('.box-registration__btn').hover(function(){
+$('.going').hover(function(){
 	var valueText = $(this).find('a').text();
 	if(valueText == '富山県富山県県山県県') {
 		$(this).find('a').text('富山県富山県');
@@ -127,8 +127,84 @@ $('.box-registration__btn').hover(function(){
 /* ------------------------------------------------------------
 	6. 画像など含めてページ読込み完了後に実行(Execute JavaScript when the Window Object is fully loaded.)
 	* ------------------------------------------------------------ */
+	$.fn.menuInit = function(opt) {
+	var opt       = opt || {},
+	menuParentClass   = opt.menuParentClass === undefined ? '.js-menu-parent' : opt.menuParentClass, //Wrapper class of each accordion
+	menuContentClass  = opt.menuContentClass  === undefined ? '.js-menu-content' : opt.menuContentClass, //Content class of subcontent
+	triggerClass    = opt.triggerClass  === undefined ? '.js-menu-trigger' : opt.triggerClass, //Trigger class
+	collapse      = opt.collapse  === undefined ? true : opt.collapse, //Collapse or not
+	animateSpeed    = opt.animateSpeed  === undefined ? 300 : opt.animateSpeed, //Animate speed,  default: 300ms
+	sync        = opt.sync  === undefined ? true : opt.sync, //Toggle at same time or not
+	toggleIcon      = opt.toggleIcon  === undefined ? '.js-toggle-icn' : opt.toggleIcon, //Change icon
+	openIcon      = opt.openIcon  === undefined ? 'fa-times' : opt.openIcon, //Change icon with specified class
+	closeIcon       = opt.closeIcon === undefined ? 'fa-bars' : opt.closeIcon, // Name of close class
+	openFirstMenu     = opt.openFirstMenu === undefined ? false : opt.openFirstMenu; // open on first menu item
+	function slideMenu($menuElement, forceOpen){
+		var href      = $menuElement.attr("href") == undefined ? $menuElement.next(menuContentClass) : $menuElement.attr("href");
+		var $href     = $(href);
+		var $menuParent   = $href.closest(menuParentClass);
+		var $trigger    = $menuElement.closest(triggerClass).siblings(triggerClass);
+		if($trigger.length == 0) $trigger= $menuParent.find(triggerClass);
+
+		if (!$href.hasClass('is-active') || forceOpen === true){
+			if(collapse) {
+				if(sync == false){
+					$menuParent.find(menuContentClass).not(href).slideUp(animateSpeed, function(){
+						$href.slideDown(animateSpeed);
+					}).removeClass('is-active');
+				} else{
+					$menuParent.find(menuContentClass).not(href).slideUp(animateSpeed).removeClass('is-active');
+					$href.slideDown(animateSpeed);
+				}
+				$trigger.removeClass('is-opened');
+				$menuParent.find(toggleIcon).addClass(closeIcon).removeClass(openIcon);
+			} else{
+				$href.slideDown(animateSpeed);
+			}
+			$href.addClass('is-active');
+			$menuElement.find(toggleIcon).addClass(openIcon).removeClass(closeIcon);
+			$menuElement.closest(triggerClass).addClass('is-opened');
+		} else {
+			$href.slideUp(animateSpeed);
+			$href.removeClass('is-active');
+			$menuElement.closest(triggerClass).removeClass('is-opened');
+			$menuElement.find(toggleIcon).addClass(closeIcon).removeClass(openIcon);
+		}
+	}
+		//open the first menu item
+		var $menuParent = $(menuParentClass);
+		var $menuContentClass = $(menuContentClass);
+		$menuContentClass.hide();
+		if(openFirstMenu){
+			$menuParent.each(function(){
+				slideMenu($(this).find(triggerClass).first(), true);
+			})
+		}
+		return this.each(function() {
+			var $menuElement = $(this);
+			//Open when loaded if set class .is-active to trigger button
+			if($menuElement.hasClass('is-active')){
+				slideMenu($menuElement, true);
+			}
+			//click event
+			$menuElement.on('click', function(e) {
+				e.preventDefault();
+				if(!$(this).hasClass('is-disable')){
+					slideMenu($(this));
+				}
+				return false;
+			});
+		});
+	};
 	$(window).on('load', function() {
-	// ここに処理を記述
+		$('.js-accordion').menuInit({
+			menuParentClass     : '.js-accordion-parent',
+			menuContentClass    : '.js-accordion-content',
+			triggerClass      : '.js-accordion-trigger',
+			collapse        : false,
+			animateSpeed      : 300,
+			sync          : true
+		});
 });//End
 
 
@@ -355,7 +431,7 @@ function smoothScroll(opt) {
 
 // noRequire jQuery
 $(window).load(function() {
-	
+
 });
 $(window).resize(function() {
 
