@@ -416,7 +416,6 @@ a.btn:visited {
 	background: #007e01;
 	text-decoration: none;
 	opacity: 0.7;
-	min-width: 300px;
 	color: #fff;
 }
 .btn-disables .btn{
