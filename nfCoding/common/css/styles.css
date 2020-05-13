@@ -1264,7 +1264,6 @@ select::-ms-expand {
 		display: block;
 		text-align: center;
 		margin-top: 25px;
-		width: 100%;
 	}
 	.captcha-image{
 		text-align: center;
