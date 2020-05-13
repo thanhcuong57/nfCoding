@@ -409,11 +409,15 @@ button{
 	transition: .3s;
 	box-shadow: 1px 2px 2px rgba(0,0,0,0.16);
 }
+a.btn:visited {
+	color: #fff;
+}
 .btn:hover{
 	background: #007e01;
 	text-decoration: none;
 	opacity: 0.7;
 	min-width: 300px;
+	color: #fff;
 }
 .btn-disables .btn{
 	background: #f3f3f3;
@@ -426,9 +430,9 @@ button{
 	margin-right: 5px;
 }
 @media screen and (max-width: 767px){
-	.btn{
+	/* .btn{
 		min-width: 100%;
-	}
+	} */
 }
 /*2-1-8.  Anchor   [acr-***]*/
 .lst-link{
@@ -862,6 +866,9 @@ col 12:    100%
 .box-donation__title__inner span{
 	margin-right: 10px;
 }
+.box-donation__title__inner {
+	font-weight: bold;
+}
 .box-donation__title__inner span img{
 	width: 38px;
 	vertical-align: middle;
@@ -935,6 +942,9 @@ col 12:    100%
 	.box-donation__content {
 		margin: 10px -10px -10px;
 	}
+	.box-donation__title__inner span img {
+		width: 28px;
+	}
 }
 .box-contact{
 	margin-top: 60px;
@@ -1006,6 +1016,11 @@ col 12:    100%
 .box-frm.box-frm--special dd {
 	width: 100%;
 	padding-left: 0;
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+	.box-frm.box-frm--special .box-frm__input input {
+		width: 535px;
+	}
 }
 .lbl-require{
 	display: table;
@@ -1240,11 +1255,9 @@ select::-ms-expand {
 	.box-frm__input{
 		display: block;
 	}
-	.box-frm__input input{
+	.box-frm__input input,
+	.box-frm.box-frm--special .box-frm__input input {
 		width: calc(100% - 21px);
-	}
-	.box-frm.box-frm--special .box-frm__input input{
-		width: 100%;
 	}
 	.box-frm__input__caption{
 		top: -26px;
