@@ -1275,6 +1275,9 @@ select::-ms-expand {
 		display: block;
 		width: 100%;
 	}
+	.box-registration .btn-disables a {
+		width: 100%;
+	}
 	.box-registration--02 .box-registration__link{
 		display: block;
 		text-align: center;
