@@ -469,6 +469,9 @@ a.btn:visited {
 	.lst-link li{
 		width: 100%;
 	}
+	.lst-link li + li {
+		margin-top: 15px;
+	}
 }
 
 /*2-1-9.  Text     [txt-***]*/
